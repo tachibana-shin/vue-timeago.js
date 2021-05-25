@@ -1,6 +1,6 @@
 {
   "name": "vue-timeagojs",
-  "version": "0.0.1",
+  "version": "0.0.2-b1",
   "main": "vue-timeagojs.js",
   "module": "vue-timeagojs.node.esm.js",
   "unpkg": "vue-timeagojs.esm.js",
@@ -42,7 +42,9 @@
   "keywords": [
     "timeago",
     "vue",
-    "vue-timeago"
+    "vue-timeago",
+    "timeagojs",
+    "timeago.js"
   ],
   "dependencies": {
     "timeago.js": "^4.0.2"
