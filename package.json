@@ -1,6 +1,6 @@
 {
   "name": "vue-timeagojs",
-  "version": "0.0.1-b6",
+  "version": "0.0.1",
   "main": "vue-timeagojs.js",
   "module": "vue-timeagojs.node.esm.js",
   "unpkg": "vue-timeagojs.esm.js",
@@ -23,7 +23,6 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2",
-    "ts-jsdoc": "^3.2.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
@@ -44,5 +43,8 @@
     "timeago",
     "vue",
     "vue-timeago"
-  ]
+  ],
+  "dependencies": {
+    "timeago.js": "^4.0.2"
+  }
 }
