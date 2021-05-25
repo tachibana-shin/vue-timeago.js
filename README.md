@@ -1,10 +1,10 @@
-# Vuetify-toast 2
+# vue-timeago.js
 
 ## Usage
 
 ``` js
 import Vue from "vue"
-import VueTimeagojs from "vue-timeagojs"
+import VueTimeagojs from "vue-timeago.js"
 
 Vue.use(VueTimeagojs)
 ```
@@ -29,7 +29,7 @@ App.vue
 </template>
 
 <script>
-import { VueTimeagojs } from "vue-timeagojs"
+import { VueTimeagojs } from "vue-timeago.js"
 
 export default {
    components: { VueTimeagojs }

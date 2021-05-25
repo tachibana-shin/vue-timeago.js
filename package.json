@@ -1,6 +1,6 @@
 {
-  "name": "vue-timeagojs",
-  "version": "0.0.2-b1",
+  "name": "vue-timeago.js",
+  "version": "0.0.1",
   "main": "vue-timeagojs.js",
   "module": "vue-timeagojs.node.esm.js",
   "unpkg": "vue-timeagojs.esm.js",
@@ -36,9 +36,9 @@
   "author": "Nguyen Thanh",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nguyenthanh1995/vue-timeagojs.git"
+    "url": "git://github.com/nguyenthanh1995/vue-timeago.js.git"
   },
-  "homepage": "https://github.com/nguyenthanh1995/vue-timeagojs#README.md",
+  "homepage": "https://github.com/nguyenthanh1995/vue-timeago.js#README.md",
   "keywords": [
     "timeago",
     "vue",
