@@ -1,5 +1,7 @@
 # vue-timeago.js
 
+**_Version 0.0.2 only supports vue 3 with no backward compatibility. If you are using vue 2 please run yarn add vue-timeago.js@0.0.1_**
+
 ## Usage
 
 ``` js

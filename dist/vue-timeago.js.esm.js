@@ -1,3 +1,5 @@
+import { defineComponent, ref, computed, toRef, watch, onUnmounted, h } from 'vue';
+
 var EN_US = ['second', 'minute', 'hour', 'day', 'week', 'month', 'year'];
 function en_US (diff, idx) {
   if (idx === 0) return ['just now', 'right now'];
@@ -152,75 +154,59 @@ var format = function (date, locale, opts) {
 register('en_US', en_US);
 register('zh_CN', zh_CN);
 
-const VueTimeagojs = {
-  interval: null,
-  props: {
-    tag: {
-      type: String,
-      default: "span"
+const VueTimeoutJS = defineComponent({
+    props: {
+        tag: {
+            type: String,
+            default: "span",
+        },
+        time: {
+            type: [String, Date, Number],
+            required: true,
+        },
+        locale: {
+            type: String,
+            required: false,
+            default: "en_US",
+        },
+        delay: {
+            type: Number,
+            default: 1000,
+        },
     },
-    time: {
-      type: [String, Date, Number],
-      required: true
+    setup(props) {
+        const now = ref(Date.now());
+        const text = computed(() => format(props.time, props.locale, {
+            relativeDate: now.value,
+        }));
+        const delay = toRef(props, "delay");
+        let interval;
+        watch(delay, (newValue) => {
+            clearInterval(interval);
+            if (newValue > 0) {
+                interval = setInterval(() => {
+                    now.value = Date.now();
+                }, newValue);
+            }
+        }, {
+            immediate: true,
+        });
+        // onBeforeMount(() => void clearInterval(interval))
+        onUnmounted(() => void clearInterval(interval));
+        return {
+            now,
+            text,
+        };
     },
-    locale: {
-      type: String,
-      required: false,
-      default: "en_US"
+    render() {
+        return h(this.tag, this.text);
     },
-    delay: {
-      type: Number,
-      default: 1000
-    }
-  },
-
-  data() {
-    return {
-      now: Date.now()
-    };
-  },
-
-  computed: {
-    text() {
-      return format(this.time, this.locale, this.now);
-    }
-
-  },
-  watch: {
-    delay: {
-      handler(newValue) {
-        clearInterval(this.$options.interval);
-
-        if (newValue > 0) {
-          this.$options.interval = setInterval(() => {
-            this.now = Date.now();
-          }, newValue);
-        }
-      },
-
-      immediate: true
-    }
-  },
-
-  beforeDestroy() {
-    clearInterval(this.$options.interval);
-  },
-
-  destroyed() {
-    clearInterval(this.$options.interval);
-  },
-
-  render(h) {
-    return h(this.tag, this.text);
-  }
-
-};
+});
 var index = {
-  install(Vue) {
-    Vue.component("vue-timeagojs", VueTimeagojs);
-  }
-
+    install(app) {
+        app.component("vue-timeagojs", VueTimeoutJS);
+    },
 };
 
 export default index;
-export { VueTimeagojs, register };
+export { VueTimeoutJS, register };
