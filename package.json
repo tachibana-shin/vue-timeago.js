@@ -1,9 +1,10 @@
 {
   "name": "vue-timeago.js",
-  "version": "0.0.1",
-  "main": "vue-timeagojs.js",
-  "module": "vue-timeagojs.node.esm.js",
-  "unpkg": "vue-timeagojs.esm.js",
+  "version": "0.0.2",
+  "main": "dist/vue-timeago.js.js",
+  "module": "dist/vue-timeago.js.esm.js",
+  "unpkg": "dist/vue-timeagojs.esm.js",
+  "types": "./types/index.d.ts",
   "description": "This simple plugin allows you to use timeago.js easily in vue.",
   "license": "MIT",
   "devDependencies": {
@@ -23,14 +24,13 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "build:webpack": "node node_modules/webpack/bin/webpack.js --mode production --progress --hide-module",
-    "build:rollup": "node build.js",
-    "build": "npm run build:webpack && npm run build:rollup",
+    "build": "rollup --config rollup.config.js",
     "prepare": "npm run build"
   },
   "author": "Nguyen Thanh",
@@ -47,6 +47,7 @@
     "timeago.js"
   ],
   "dependencies": {
-    "timeago.js": "^4.0.2"
+    "timeago.js": "^4.0.2",
+    "vue": "^3.1.5"
   }
 }
