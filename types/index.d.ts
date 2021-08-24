@@ -1,6 +1,5 @@
 import { register } from "timeago.js";
-import { App } from "vue";
-import type { PropType } from "vue";
+import type { PropType, App } from "vue";
 export declare const VueTimeoutJS: import("vue").DefineComponent<{
     tag: {
         type: PropType<string>;
@@ -19,10 +18,9 @@ export declare const VueTimeoutJS: import("vue").DefineComponent<{
         type: PropType<number>;
         default: number;
     };
-}, {
-    now: import("vue").Ref<number>;
-    text: import("vue").ComputedRef<string>;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<{
+}, () => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    [key: string]: any;
+}>, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<{
     tag?: unknown;
     time?: unknown;
     locale?: unknown;

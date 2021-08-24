@@ -1,15 +1,15 @@
 import { format, register } from "timeago.js";
 import {
-  onUnmounted,
+  // onUnmounted,
+  onBeforeUnmount,
   h,
   ref,
   computed,
   watch,
   toRef,
   defineComponent,
-  App,
 } from "vue";
-import type { PropType } from "vue";
+import type { PropType, App } from "vue";
 
 export const VueTimeoutJS = defineComponent({
   props: {
@@ -56,16 +56,10 @@ export const VueTimeoutJS = defineComponent({
       }
     );
 
-    // onBeforeMount(() => void clearInterval(interval))
-    onUnmounted(() => void clearInterval(interval));
+    onBeforeUnmount(() => void clearInterval(interval));
+    // onUnmounted(() => void clearInterval(interval));
 
-    return {
-      now,
-      text,
-    };
-  },
-  render() {
-    return h(this.tag, this.text);
+    return () => h(props.tag, text.value);
   },
 });
 

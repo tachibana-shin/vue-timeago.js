@@ -1,4 +1,4 @@
-import { defineComponent, ref, computed, toRef, watch, onUnmounted, h } from 'vue';
+import { defineComponent, ref, computed, toRef, watch, onBeforeUnmount, h } from 'vue';
 
 var EN_US = ['second', 'minute', 'hour', 'day', 'week', 'month', 'year'];
 function en_US (diff, idx) {
@@ -191,15 +191,9 @@ const VueTimeoutJS = defineComponent({
         }, {
             immediate: true,
         });
-        // onBeforeMount(() => void clearInterval(interval))
-        onUnmounted(() => void clearInterval(interval));
-        return {
-            now,
-            text,
-        };
-    },
-    render() {
-        return h(this.tag, this.text);
+        onBeforeUnmount(() => void clearInterval(interval));
+        // onUnmounted(() => void clearInterval(interval));
+        return () => h(props.tag, text.value);
     },
 });
 var index = {
