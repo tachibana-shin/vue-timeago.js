@@ -1,6 +1,6 @@
 {
   "name": "vue-timeago.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/vue-timeago.js.js",
   "module": "dist/vue-timeago.js.esm.js",
   "unpkg": "dist/vue-timeagojs.esm.js",
