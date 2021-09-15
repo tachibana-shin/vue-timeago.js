@@ -39,9 +39,9 @@ export default {
 </script>
 ```
 
-Prop name | Type                 | Default | Description 
----------------------------------------------
-tag       | String               | "span"  | the name of the tag you want to render 
-time      | Date, String, Number |         | required time you want to count 
-locale    | String               | "en_US" | locale name 
-delay     | Number               | 1000    | refresh time. if you set it to 0, vue-timeagojs won't refresh 
+| Prop name | Type                 | Default | Description                                                   |
+--------------------------------------------------------------------------------------------------------------
+| tag       | String?               | "span"  | the name of the tag you want to render                        |
+| time      | Date, String, Number  |         | required time you want to count                               |
+| locale    | String?               | "en_US" | locale name                                                   |
+| delay     | Number?               | 1000    | refresh time. if you set it to 0, vue-timeagojs won't refresh |
