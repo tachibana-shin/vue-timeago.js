@@ -35,9 +35,9 @@
   "author": "Nguyen Thanh",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nguyenthanh1995/vue-timeago.js.git"
+    "url": "git://github.com/tachibana-shin/vue-timeago.js.git"
   },
-  "homepage": "https://github.com/nguyenthanh1995/vue-timeago.js#README.md",
+  "homepage": "https://github.com/tachibana-shin/vue-timeago.js#README.md",
   "keywords": [
     "timeago",
     "vue",
