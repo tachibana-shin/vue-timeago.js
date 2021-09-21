@@ -1,12 +1,13 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "env": {
     "browser": true,
-    "es2021": true,
+    "es2021": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
     "ecmaVersion": 12,
-    "sourceType": "module",
+    "sourceType": "module"
   },
   "plugins": [
     "@babel",
@@ -16,6 +17,6 @@
     "quotes": [
       "error",
       "double"
-    ],
-  },
-};
+    ]
+  }
+}

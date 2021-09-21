@@ -1,5 +1,5 @@
 import { register } from "timeago.js";
-import type { PropType, App } from "vue";
+import type { PropType, Plugin } from "vue";
 export declare const VueTimeoutJS: import("vue").DefineComponent<{
     tag: {
         type: PropType<string>;
@@ -38,7 +38,5 @@ export declare const VueTimeoutJS: import("vue").DefineComponent<{
     delay: number;
 }>;
 export { register };
-declare const _default: {
-    install(app: App): void;
-};
+declare const _default: Plugin;
 export default _default;
