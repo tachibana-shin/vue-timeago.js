@@ -1,13 +1,12 @@
-const path = require("path");
-const babel = require("rollup-plugin-babel");
-const { terser } = require("rollup-plugin-terser");
-const resolve = require("rollup-plugin-node-resolve");
-const commonjs = require("rollup-plugin-commonjs");
-const typescript = require("rollup-plugin-typescript2");
+import babel from "rollup-plugin-babel";
+import { terser } from "rollup-plugin-terser";
+import resolve from "rollup-plugin-node-resolve";
+import commonjs from "rollup-plugin-commonjs";
+import typescript from "rollup-plugin-typescript2";
+import { name } from "./package.json";
 
 export default {
   input: "src/index.ts",
-  external: ["vue"],
   plugins: [
     resolve(),
     commonjs(),
@@ -30,23 +29,21 @@ export default {
     }),
     typescript({
       clean: true,
-      declarationDir: path.resolve(__dirname, "types"),
       tsconfig: "./tsconfig.json",
       useTsconfigDeclarationDir: true,
     }),
   ],
   output: [
     {
-      file: "dist/vue-timeago.js.js",
+      file: `dist/${name}.min.js`,
       format: "umd",
       plugins: [terser()],
-      name: "VueTimeoutJS",
+      name: `${name.replace(/\./g, "")}`,
     },
     {
-      file: "dist/vue-timeago.js.esm.js",
+      file: `dist/${name}.esm.js`,
       format: "esm",
       plugins: [],
-      globals: ["vue"],
     },
   ],
 };

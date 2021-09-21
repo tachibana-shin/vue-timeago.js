@@ -4,11 +4,14 @@
 
 ## Usage
 
-``` js
-import Vue from "vue"
+``` ts
+import { createApp } from "vue"
 import VueTimeagojs from "vue-timeago.js"
 
-Vue.use(VueTimeagojs)
+const app = createApp()
+app.use(VueTimeagojs)
+
+app.mount("#app")
 ```
 
 App.vue
@@ -30,17 +33,13 @@ App.vue
    </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import { VueTimeagojs } from "vue-timeago.js"
-
-export default {
-   components: { VueTimeagojs }
-}
 </script>
 ```
 
-| Prop name | Type                 | Default | Description                                                   |
---------------------------------------------------------------------------------------------------------------
+| Prop name | Type                  | Default | Description                                                   |
+| --------- | --------------------- | ------- | ------------------------------------------------------------- |
 | tag       | String?               | "span"  | the name of the tag you want to render                        |
 | time      | Date, String, Number  |         | required time you want to count                               |
 | locale    | String?               | "en_US" | locale name                                                   |

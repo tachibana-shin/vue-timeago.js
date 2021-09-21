@@ -9,7 +9,7 @@ import {
   toRef,
   defineComponent,
 } from "vue";
-import type { PropType, App } from "vue";
+import type { PropType, App, Plugin } from "vue";
 
 export const VueTimeoutJS = defineComponent({
   props: {
@@ -66,7 +66,7 @@ export const VueTimeoutJS = defineComponent({
 export { register };
 
 export default {
-  install(app: App) {
+  install: (app: App) => {
     app.component("vue-timeagojs", VueTimeoutJS);
   },
-};
+} as Plugin;

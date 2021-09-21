@@ -30,7 +30,9 @@ export declare const VueTimeoutJS: import("vue").DefineComponent<{
     time: string | number | Date;
     locale: string;
     delay: number;
-} & {}> & {}, {
+} & {}> & {
+    [x: string & `on${string}`]: undefined;
+}, {
     tag: string;
     locale: string;
     delay: number;
